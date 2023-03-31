@@ -1,6 +1,6 @@
 Name:		texlive-ppt-slides
 Version:	64445
-Release:	1
+Release:	2
 Summary:	Good-looking slide decks a la PowerPoint (PPT)
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/ppt-slides
