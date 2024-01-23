@@ -1,5 +1,5 @@
 Name:		texlive-ppt-slides
-Version:	68764
+Version:	69458
 Release:	1
 Summary:	Good-looking slide decks a la PowerPoint (PPT)
 Group:		Publishing
