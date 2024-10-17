@@ -3,7 +3,7 @@ Version:	71155
 Release:	1
 Summary:	Good-looking slide decks a la PowerPoint (PPT)
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/ppt-slides
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/ppt-slides
 License:	mit
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/ppt-slides.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/ppt-slides.doc.r%{version}.tar.xz
