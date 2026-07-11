@@ -1,38 +1,44 @@
-Name:		texlive-ppt-slides
-Version:	72584
-Release:	1
+%global tl_name ppt-slides
+%global tl_revision 79345
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	0.8.0
+Release:	%{tl_revision}.1
 Summary:	Good-looking slide decks a la PowerPoint (PPT)
 Group:		Publishing
 URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/ppt-slides
 License:	mit
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/ppt-slides.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/ppt-slides.doc.r%{version}.tar.xz
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/ppt-slides.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/ppt-slides.doc.r%{tl_revision}.tar.xz
+Source2:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/ppt-slides.source.r%{tl_revision}.tar.xz
 BuildArch:	noarch
-BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+BuildSystem:	texlive
+Requires:	texlive(anyfontsize)
+Requires:	texlive(changepage)
+Requires:	texlive(crumbs)
+Requires:	texlive(enumitem)
+Requires:	texlive(fontsize)
+Requires:	texlive(hardwrap)
+Requires:	texlive(href-ul)
+Requires:	texlive(ifoddpage)
+Requires:	texlive(lastpage)
+Requires:	texlive(listings)
+Requires:	texlive(pagecolor)
+Requires:	texlive(pgf)
+Requires:	texlive(pgfopts)
+Requires:	texlive(qrcode)
+Requires:	texlive(seqsplit)
+Requires:	texlive(soul)
+Requires:	texlive(textpos)
+Requires:	texlive(tikzpagenodes)
+Requires:	texlive(titling)
+Requires:	texlive(varwidth)
+Requires:	texlive(xcolor)
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-This LaTeX package helps you create slide decks as good-looking
-as with PowerPointtm, but more precise, uniform, and visually
-strict. Check this series of lectures fully designed with the
-use of this package.
+This LaTeX package helps you create slide decks as good-looking as with
+PowerPointtm, but more precise, uniform, and visually strict. Check this
+series of lectures fully designed with the use of this package.
 
-%prep
-%autosetup -p1 -c -a1
-
-%build
-
-%install
-rm -rf tlpkg
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -a * %{buildroot}%{_texmfdistdir}
-
-%files
-%{_texmfdistdir}/tex/latex/ppt-slides
-%doc %{_texmfdistdir}/doc/latex/ppt-slides
-
-%post -p %{_sbindir}/texlive.post
-
-%postun
-[ "$1" -eq 0 ] && %{_sbindir}/texlive.post
